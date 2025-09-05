@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://api.storic.shop';
+const API_BASE_URL = 'https://api.storic.shop/api';
 
 class ApiService {
   async fetchProducts() {
@@ -43,6 +43,7 @@ class ApiService {
   async fetchStoreProducts(storeId) {
     try {
       const response = await fetch(`${API_BASE_URL}/stores/${storeId}/products/`);
+      console.log(response);
       if (!response.ok) {
         throw new Error('Failed to fetch store products');
       }

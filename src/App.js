@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import ProductList from './components/ProductList';
+import Store from './components/Store';
 import ProductModal from './components/ProductModal';
 import './App.css';
 
@@ -51,7 +51,7 @@ function App() {
       <div className="app">
         <div className="container">
           <Routes>
-            <Route path="/" element={<ProductList onProductSelect={handleProductSelect} />} />
+            <Route path="/store/:storeId" element={<Store onProductSelect={handleProductSelect} />} />
           </Routes>
           <BottomNavigation />
         </div>
