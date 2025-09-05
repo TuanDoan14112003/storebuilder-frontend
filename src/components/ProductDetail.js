@@ -164,7 +164,7 @@ const ProductDetail = () => {
               <button 
                 className="add-to-cart-btn"
                 onClick={handleAddToCart}
-                disabled={!product.is_available || product.stock < 1}
+                disabled={product.stock < 1}
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <circle cx="9" cy="21" r="1"/>

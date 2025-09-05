@@ -42,7 +42,6 @@ body {
 
 .main {
   flex: 1;
-  margin-bottom: 80px;
 }
 
 .products-grid {
@@ -127,46 +126,28 @@ body {
   background: #e5e7eb;
 }
 
-.bottom-nav {
+.cart-icon {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
   background: white;
-  border-top: 1px solid #e5e7eb;
-  padding: 12px;
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.nav-button {
-  background: none;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  color: #9ca3af;
-  cursor: pointer;
-  transition: color 0.2s;
-  padding: 8px 16px;
   border-radius: 12px;
-  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #374151;
+  transition: all 0.2s ease;
+  z-index: 1000;
+  text-decoration: none;
 }
 
-.nav-button.active {
-  color: #3b82f6;
-  background: #eff6ff;
-}
-
-.nav-button:hover {
-  color: #6b7280;
-}
-
-.nav-button.active:hover {
-  color: #3b82f6;
+.cart-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  color: #007bff;
 }
 
 /* Responsive grid layout */
@@ -205,9 +186,5 @@ body {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-  }
-  
-  .bottom-nav {
-    gap: 40px;
   }
 }

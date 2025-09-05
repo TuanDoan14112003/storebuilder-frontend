@@ -54,8 +54,15 @@ const ProductModal = ({ productId, isOpen, onClose }) => {
     }
   };
 
-  const handleAddToCart = () => {
-    alert(`Added ${quantity} ${product.name} to cart!`);
+  const handleAddToCart = async () => {
+    try {
+      await ApiService.addToCart(product.id, quantity);
+      alert(`Added ${quantity} ${product.name} to cart!`);
+      onClose(); // Close modal after adding to cart
+    } catch (error) {
+      console.error('Error adding to cart:', error);
+      alert('Failed to add item to cart. Please try again.');
+    }
   };
 
   const incrementQuantity = () => {
@@ -159,7 +166,7 @@ const ProductModal = ({ productId, isOpen, onClose }) => {
                 <button 
                   className="modal-add-to-cart"
                   onClick={handleAddToCart}
-                  disabled={!product.is_available || product.stock < 1}
+                  disabled={product.stock < 1}
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <circle cx="9" cy="21" r="1"/>
